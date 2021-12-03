@@ -8,6 +8,7 @@ import (
 
 /**
 go语言中数据类型
+todo go语言中 首字母的大小写来区别是否是私有的
 1、基本数据类型 四个：
 	1)数值  默认值  0 todo 保小保大原则
 	2)字符 byte  默认值
@@ -101,5 +102,17 @@ func main() {
 	fmt.Printf("type is %T \n", float)
 
 	//指针
+	var inr = 520
+	var ptr *int = &inr
+	fmt.Println("int的地址：", &inr)
+	fmt.Println("int的地址：", ptr)
+	//取出指针的值
+	fmt.Printf("ptr指向的值=%v", *ptr)
+
+	var userName string = "king"
+	fmt.Println(userName)
+
+	//键盘输入语句
+	fmt.Scanln()
 
 }
