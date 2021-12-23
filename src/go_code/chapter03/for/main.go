@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 /**
 循环操作
@@ -57,15 +61,25 @@ func main() {
 	/**
 	打印九九乘法表
 	*/
-	for i := 1; i <= 9; i++ {
-		for j := 1; j <= i; j++ {
-			fmt.Printf("%v * %v = %v \t", j, i, j*i)
-		}
-		fmt.Println(" ")
-	}
+	//for i := 1; i <= 9; i++ {
+	//	for j := 1; j <= i; j++ {
+	//		fmt.Printf("%v * %v = %v \t", j, i, j*i)
+	//	}
+	//	fmt.Println(" ")
+	//}
 
 	/**
-	  break 语句的使用
+	  break 终止循环
+	  continue 结束本次循环
 	*/
-
+	var count int = 0
+	for {
+		rand.Seed(time.Now().UnixNano())
+		n := rand.Intn(100) + 1
+		count++
+		if n == 99 {
+			break
+		}
+	}
+	fmt.Println(count)
 }
